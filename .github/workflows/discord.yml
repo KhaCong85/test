@@ -1,0 +1,20 @@
+name: Notify Discord 10AM
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '0 3 * * *' # 3h UTC = 10h VN (UTC+7)
+
+jobs:
+  send-discord:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send message to Discord
+        run: |
+          curl -X POST ${{ secrets.WEBHOOK_URL }} \
+          -H "Content-Type: application/json" \
+          -d '{
+            "content": "🔔 10h sáng rồi! Test thành công "
+          }'
