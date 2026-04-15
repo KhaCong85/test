@@ -1,9 +1,9 @@
-name: Notify Discord Every 5 Minutes
+name: Notify Discord 3PM
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 8 * * *'
 
 jobs:
   send-discord:
@@ -15,5 +15,5 @@ jobs:
           curl -X POST ${{ secrets.WEBHOOK_URL }} \
           -H "Content-Type: application/json" \
           -d '{
-            "content": "⏰ Bot đang chạy mỗi 5 phút 🚀"
+            "content": "🔔 3 giờ chiều rồi! 🚀"
           }'
