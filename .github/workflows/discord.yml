@@ -2,9 +2,8 @@ name: Notify Discord 10AM
 
 on:
   workflow_dispatch:
-
   schedule:
-    - cron: '0 3 * * *' # 3h UTC = 10h VN (UTC+7)
+    - cron: '0 3 * * *'
 
 jobs:
   send-discord:
