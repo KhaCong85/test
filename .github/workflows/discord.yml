@@ -3,7 +3,7 @@ name: Notify Discord 3PM
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '0 2 * * *'
 
 jobs:
   send-discord:
@@ -15,5 +15,5 @@ jobs:
           curl -X POST ${{ secrets.WEBHOOK_URL }} \
           -H "Content-Type: application/json" \
           -d '{
-            "content": "🔔 3 giờ chiều rồi! 🚀"
+            "content": "🔔 9 giờ sáng rồi! 🚀"
           }'
